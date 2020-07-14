@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="408860939002-jns81q27ol854epa70jipfitj4oj7ocs.apps.googleusercontent.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Major+Mono+Display&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet"> 
+    <title>Welcome to KANBAN!</title>
+</head>
+<body>
+    <div id="navbar">
+        <nav id="nav">
+            <div class="logoText" id="logo">
+                <a role="button"><h2>KANBAN</h2></a>
+            </div>
+            <div id="homeButton">
+                <a role="button"><i class="fa fa-home"></i></a>
+            </div>
+            <div id="welcomeUser">
+                <span class="font-weight-bold">Welcome, Maya.</span>
+                <span class="font-weight-bold">Already a user? Go</span>
+                <button class="btn btn-light btn-sm font-weight-bold">Sign out</button>
+                <button class="btn btn-light btn-sm font-weight-bold">Sign in</button>
+            </div>
+        </nav>
+    </div>
+
+    <div id="home-before-login">
+        <div id="imageHome">
+            <img src="https://images.unsplash.com/photo-1586892478025-2b5472316f22?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" width="750px" height="600px" alt="ini image">
+        </div>
+        <div id="contentHome">
+            <h1>Looking for a place to organize your work?</h1>
+            <br>
+            <h1><span class="logoText">KANBAN</span> is the <b>right place</b> for you!</h1>
+            <br>
+            <h3>Go <b>register</b> yourself here.</h3>
+            <button type="button" class="btn btn-outline-dark">Register</button>
+        </div>
+    </div>
+
+    <div id="loginPage">
+        <form id="loginForm">
+            <h1>Login Page</h1>
+            <div class="form-group">
+              <label for="emailLogin">Email Address</label>
+              <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="yourname@example.com">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="passwordLogin">Password</label>
+              <input placeholder="********" type="password" class="form-control" id="passwordLogin">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" onclick="togglePassword(`passwordLogin`)" id="togglePass">
+              <label class="form-check-label" for="togglePass">Show Password</label>
+            </div>
+            <button type="submit" class="btn btn-outline-dark">Sign in</button><br><br>
+            <p>or login through:</p>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <a href="#" onclick="signOut();">Sign out</a>
+        </form>
+    </div>
+
+    <div id="registerPage">
+        <form id="registerForm">
+            <h1>Register Page</h1>
+            <div class="form-group">
+                <label for="nameRegister">Your Name</label>
+                <input  type="text" class="form-control" id="nameRegister" placeholder="Adhitia Sofyan">
+              </div>
+            <div class="form-group">
+              <label for="emailRegister">Email Address</label>
+              <input placeholder="yourname@example.com" type="email" class="form-control" id="emailRegister" aria-describedby="emailHelp">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="passwordRegister">Password</label>
+              <input placeholder="********" type="password" class="form-control" id="passwordRegister">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" onclick="togglePassword(`passwordRegister`)" id="togglePass">
+              <label class="form-check-label" for="togglePass">Show Password</label>
+            </div>
+            <button type="submit" class="btn btn-outline-dark">Register</button>
+        </form>
+    </div>
+
+    <div class="container my-3">
+        <div class="row" id="main-page">
+            <div class="column">
+                <div class="header">
+                    <span>Backlog</span>
+                    <div class="buttonHeader">
+                        <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+                        <a role="button"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="formAdd">
+                        <form>
+                            <label for="title">Title</label><br>
+                            <input type="text" class="form-control" name="title" id="title" placeholder="Bugs in Product A">
+                            <label for="description">Description</label><br>
+                            <textarea name="description" class="form-control" id="description" cols="20" rows="2" placeholder="When clicked, ads show up, user doesnt like it."></textarea>
+                            <button type="submit" class="btn btn-secondary btn-sm my-2">Add</button>
+                            <button type="button" class="btn btn-warning btn-sm my-2">Cancel</button>
+                        </form>
+                    </div>
+                    <div class="content" id="backlog">
+                        <h5><b>Sebelum Vue</b></h5>
+                        <p>Harus dikerjakan hari ini pokoknya harus hari ini gamau tau.</p>
+                        <small>By Mayana Fitri</small>
+                        <div class="logoContent">
+                            <a role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                            <a role="button"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <a role="button"><i class="fa fa-align-justify" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="addSection">
+                    <h6>End of List</h6>
+                </div>
+            </div>
+            <div class="column">
+                <div class="header">
+                    <span>To Do</span>
+                    <div class="buttonHeader">
+                        <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+                        <a role="button"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="formEdit">
+                        <form>
+                            <label for="titleEdit">Title</label><br>
+                            <input type="text" class="form-control" name="titleEdit" id="titleEdit">
+                            <label for="descriptionEdit">Description</label><br>
+                            <textarea name="descriptionEdit" class="form-control" id="descriptionEdit" cols="20" rows="2"></textarea>
+                            <button type="submit" class="btn btn-secondary btn-sm my-2">Edit</button>
+                            <button type="button" class="btn btn-warning btn-sm my-2">Cancel</button>
+                        </form>
+                    </div>
+                    <div class="content" id="to-do">
+                    <p>Harus dikerjakan hari ini</p>
+                    </div>
+                </div> 
+                <div class="addSection">
+                    <h6>End of List</h6>
+                </div>     
+            </div>
+            <div class="column">
+                <div class="header">
+                    <span>On Progress</span>
+                    <div class="buttonHeader">
+                        <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+                        <a role="button"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content" id="on-progress">
+                        <p>Harus dikerjakan hari ini</p>
+                    </div>
+                </div>
+                <div class="addSection">
+                    <h6>End of List</h6>
+                </div>
+            </div>
+            <div class="column">
+                <div class="header">
+                    <span>Done</span>
+                    <div class="buttonHeader">
+                        <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+                        <a role="button"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content" id="done">
+                        <p>Harus dikerjakan hari ini</p>
+                    </div>
+                </div>
+                <div class="addSection">
+                    <h6>End of List</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</body>
+</html>
