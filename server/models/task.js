@@ -12,6 +12,16 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
+
+    static generateForm(data) {
+      let obj = {
+        title: data.title,
+        description: data.description,
+        category: data.category
+      }
+
+      return obj
+    }
   };
   Task.init({
     title: {

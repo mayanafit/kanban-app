@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+const {hashPass} = require(`../helpers/bcrypt`)
+
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -11,6 +13,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+    }
+
+    static generateForm(data) {
+      let obj = {
+        name: data.name,
+        email: data.email,
+        password: data.password
+      }
+
+      return obj
     }
   };
   User.init({
@@ -62,19 +74,13 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     organization: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notNull: {
-          args: true,
-          msg: `Check Before Create hooks to fill.`
-        }
-      }
+      type: DataTypes.STRING
     }
   }, {
     hooks: {
       beforeCreate(user) {
         user.organization = `Hacktiv8`
+        user.password = hashPass(user.password)
       }
     },
     sequelize,
