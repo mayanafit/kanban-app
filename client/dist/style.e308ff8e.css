@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    background-color: black;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#home-before-login {
+    display: flex;
+}
+
+#contentHome {
+    margin: 90px 10px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace
+}
+
+#welcomeUser {
+    margin: 0px 10px;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#welcomeUser button {
+    margin-left: 10px;
+}
+
+#loginPage, #registerPage {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+
+#loginForm, #registerForm {
+    width: 400px;
+    border: 1px solid gray;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#loginForm h3 {
+    text-align: center;
+    margin: 15px;
+    font-weight: bolder;
+}
+
+#loginForm > p > a {
+    text-decoration: underline;
+}
+
+#loginForm > p > a:hover {
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+
+#registerForm > p > a {
+    text-decoration: underline;
+}
+
+#registerForm > p > a:hover {
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+
+#registerForm h3 {
+    text-align: center;
+    margin: 15px;
+    font-weight: bolder;
+}
+
+#homeButton {
+    font-size: 30px;
+    color: white;
+    margin-left: 70px;
+}
+
+#logo {
+    margin-left: 7px;
+    padding-top: 5px;
+    color: white;
+}
+
+.logoText {
+    font-family: 'Major Mono Display', monospace;
+}
+
+.header {
+    background-color: maroon;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+
+.body {
+    background-color: black;
+    padding: 5px;
+    overflow: auto;
+}
+
+.content {
+    border: 1px solid black;
+    background-color: white;
+    margin: 8px 5px;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.content > h5 {
+    font-size: 12px;
+}
+
+.logoContent {
+    align-self: flex-end;
+}
+
+.logoContent i {
+    margin: 2px;
+}
+
+.logoContent > a > i:hover {
+    color: maroon;
+}
+
+.column {
+    width: 24%;
+    margin: 1px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#main-page {
+    display: flex;
+    justify-content: space-evenly;
+    height: 450px;
+}
+
+.formAdd, .formEdit {
+    font-family: 'Ubuntu', sans-serif;
+    border: 1px black solid;
+    margin: 5px;
+    border-radius: 7px;
+    padding: 10px;
+    background-color: white;
+}
+
+.addSection {
+    background-color: maroon;
+    padding-top: 10px;
+}
+
+.addSection h6 {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+}
+
+.addSection a:hover {
+    font-weight: bolder;
+    color: white;
+    text-decoration: none;
+}
+
+.buttonHeader > a > i:hover {
+    color: black;
+}
+
+
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
