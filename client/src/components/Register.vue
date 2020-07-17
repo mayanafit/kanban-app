@@ -51,7 +51,7 @@ export default {
         registerProcess() {
             axios({
             method: `POST`,
-            url: `http://localhost:3000/register`,
+            url: `https://warm-falls-04827.herokuapp.com/register`,
             data: {
             name: this.name,
             email: this.email,

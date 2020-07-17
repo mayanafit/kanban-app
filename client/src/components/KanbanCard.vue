@@ -58,7 +58,7 @@ export default {
         addTask(params1, params2) {
             axios({
                 method: `POST`,
-                url: `http://localhost:3000/tasks`,
+                url: `https://warm-falls-04827.herokuapp.com/tasks`,
                 headers: {
                 access_token: localStorage.access_token
                 },

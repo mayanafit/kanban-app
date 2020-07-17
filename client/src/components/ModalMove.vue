@@ -41,7 +41,7 @@ export default {
             
             axios({
                 method: `GET`,
-                url: `http://localhost:3000/tasks/${this.valueId}`,
+                url: `https://warm-falls-04827.herokuapp.com/${this.valueId}`,
                 headers: {
                 access_token: localStorage.access_token
                 }
@@ -51,7 +51,7 @@ export default {
                 this.description = response.data.description
                 return axios({
                     method: `PUT`,
-                    url: `http://localhost:3000/tasks/${this.valueId}`,
+                    url: `https://warm-falls-04827.herokuapp.com/${this.valueId}`,
                     headers: {
                     access_token: localStorage.access_token
                     },

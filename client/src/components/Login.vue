@@ -52,7 +52,7 @@ export default {
             let id_token = googleUser.getAuthResponse().id_token
                 axios({
                     method: `POST`,
-                    url: `http://localhost:3000/login/google`,
+                    url: `https://warm-falls-04827.herokuapp.com/login/google`,
                     data: {
                         id_token
                     }
@@ -80,7 +80,7 @@ export default {
         loginProcess() {
             axios({
             method: `POST`,
-            url: `http://localhost:3000/login`,
+            url: `https://warm-falls-04827.herokuapp.com/login`,
             data: {
             email: this.email,
             password: this.password
