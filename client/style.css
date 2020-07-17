@@ -36,24 +36,44 @@
 #loginPage, #registerPage {
     display: flex;
     justify-content: center;
-    margin: 100px;
+    margin: 25px;
 }
 
 #loginForm, #registerForm {
     width: 400px;
     border: 1px solid gray;
-    padding: 20px;
+    padding: 5px 20px;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
 }
 
-#loginForm h1 {
+#loginForm h3 {
     text-align: center;
     margin: 15px;
     font-weight: bolder;
 }
 
-#registerForm h1 {
+#loginForm > p > a {
+    text-decoration: underline;
+}
+
+#loginForm > p > a:hover {
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+
+#registerForm > p > a {
+    text-decoration: underline;
+}
+
+#registerForm > p > a:hover {
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+
+#registerForm h3 {
     text-align: center;
     margin: 15px;
     font-weight: bolder;
@@ -101,6 +121,11 @@
     font-family: 'Ubuntu', sans-serif;
     display: flex;
     flex-direction: column;
+    font-size: 12px;
+}
+
+.content > h5 {
+    font-size: 12px;
 }
 
 .logoContent {
@@ -109,6 +134,10 @@
 
 .logoContent i {
     margin: 2px;
+}
+
+.logoContent > a > i:hover {
+    color: maroon;
 }
 
 .column {
@@ -152,3 +181,8 @@
     color: white;
     text-decoration: none;
 }
+
+.buttonHeader > a > i:hover {
+    color: black;
+}
+

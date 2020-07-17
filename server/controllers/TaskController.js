@@ -1,13 +1,14 @@
-const {Task} = require(`../models`)
+const {Task, User} = require(`../models`)
 
 class TaskController {
 
     static show(req, res, next) {
         let UserId = req.user.id
+        let userName = req.user.name
 
-        Task.findAll({where: {UserId}})
+        Task.findAll({ include:[User], order: [[`createdAt`, `ASC`]]})
         .then(data => {
-            res.status(200).json(data)
+            res.status(200).json({data, userName})
         })
         .catch(err => {
             next(err)
