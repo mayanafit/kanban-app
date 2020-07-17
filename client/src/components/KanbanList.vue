@@ -9,7 +9,7 @@
             <div class="logoContent">
                 <a @click="editButton(filteredTask.User.id)" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                 <a @click="deleteInput(filteredTask.id, filteredTask.title)" role="button"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                <a @click="dataMove(filteredTask.category, filteredTask.id, filteredTask.User.name)" data-toggle="modal" data-target="#exampleModal" role="button"><i class="fa fa-align-justify" aria-hidden="true"></i></a>
+                <a @click="dataMove(filteredTask.category, filteredTask.id, filteredTask.User.id)" data-toggle="modal" data-target="#exampleModal" role="button"><i class="fa fa-align-justify" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>
