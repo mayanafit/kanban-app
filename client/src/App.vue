@@ -119,7 +119,7 @@ export default {
       .then(response => {
         // console.log(response)
         this.tasks = this.formattedTasks(response.data.data)
-        this.userName = response.data.userName
+        this.userName = response.data.UserId
         for(let i = 0; i < this.tasks.length; i++) {
           for (let j = 0; j < this.categories.length; j++) {
             if (this.tasks[i].category === this.categories[j].name) {

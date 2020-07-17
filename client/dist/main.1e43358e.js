@@ -11905,7 +11905,7 @@ exports.default = _default;
                       return _vm.dataMove(
                         _vm.filteredTask.category,
                         _vm.filteredTask.id,
-                        _vm.filteredTask.User.name
+                        _vm.filteredTask.User.id
                       )
                     }
                   }
@@ -12614,7 +12614,7 @@ var _default = {
       this.$emit("moveSuccess");
     },
     dataMove: function dataMove(value1, value2, value3) {
-      if (this.welcomeName === value3) {
+      if (this.welcomeName == value3) {
         this.currentCategory = value1;
         this.currentId = value2;
       } else {
@@ -12846,7 +12846,7 @@ var _default = {
       }).then(function (response) {
         // console.log(response)
         _this.tasks = _this.formattedTasks(response.data.data);
-        _this.userName = response.data.userName;
+        _this.userName = response.data.UserId;
 
         for (var i = 0; i < _this.tasks.length; i++) {
           for (var j = 0; j < _this.categories.length; j++) {
@@ -13002,7 +13002,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39233" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38415" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

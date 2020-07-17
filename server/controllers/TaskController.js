@@ -4,10 +4,10 @@ class TaskController {
 
     static show(req, res, next) {
         let UserId = req.user.id
-
+        let UserName = req.user.name
         Task.findAll({ include:[User], order: [[`createdAt`, `ASC`]]})
         .then(data => {
-            res.status(200).json({data, UserId})
+            res.status(200).json({data, UserId, UserName})
         })
         .catch(err => {
             next(err)
