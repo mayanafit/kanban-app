@@ -8,7 +8,7 @@ class TaskController {
 
         Task.findAll({ include:[User], order: [[`createdAt`, `ASC`]]})
         .then(data => {
-            res.status(200).json({data, userName})
+            res.status(200).json({data, userId})
         })
         .catch(err => {
             next(err)

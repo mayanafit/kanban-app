@@ -11596,7 +11596,7 @@ var _default = {
 
       (0, _axios.default)({
         method: "PUT",
-        url: "https://warm-falls-04827.herokuapp.com/".concat(this.valueTask.id),
+        url: "https://warm-falls-04827.herokuapp.com/tasks/".concat(this.valueTask.id),
         headers: {
           access_token: localStorage.access_token
         },
@@ -12421,7 +12421,7 @@ var _default = {
 
       (0, _axios.default)({
         method: "GET",
-        url: "https://warm-falls-04827.herokuapp.com/".concat(this.valueId),
+        url: "https://warm-falls-04827.herokuapp.com/tasks/".concat(this.valueId),
         headers: {
           access_token: localStorage.access_token
         }
@@ -12430,7 +12430,7 @@ var _default = {
         _this2.description = response.data.description;
         return (0, _axios.default)({
           method: "PUT",
-          url: "https://warm-falls-04827.herokuapp.com/".concat(_this2.valueId),
+          url: "https://warm-falls-04827.herokuapp.com/tasks/".concat(_this2.valueId),
           headers: {
             access_token: localStorage.access_token
           },
@@ -13002,7 +13002,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46561" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39233" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

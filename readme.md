@@ -376,13 +376,7 @@ KANBAN is here to list all your task with more agile. We use RESTful API with JS
     - Response 200: OK
 
         {
-            "id": 2,
-            "title": "Cat's Duty",
-            "description": "membersihkan poop dan tempat makan MengMeng",
-            "status": "uncompleted",
-            "due_date": "2020-09-19T17:00:00.000Z",
-            "createdAt": "2020-07-06T10:54:51.004Z",
-            "updatedAt": "2020-07-06T11:53:25.979Z"
+            "message": "Successfully delete Task with title 'Title in'!"
         }
    
     - Response 404: Not Found

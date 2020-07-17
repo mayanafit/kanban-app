@@ -29,7 +29,7 @@ export default {
         editTask() {
             axios({
                 method: `PUT`,
-                url: `https://warm-falls-04827.herokuapp.com/${this.valueTask.id}`,
+                url: `https://warm-falls-04827.herokuapp.com/tasks/${this.valueTask.id}`,
                 headers: {
                 access_token: localStorage.access_token
                 },

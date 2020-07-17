@@ -27,7 +27,7 @@ export default {
             this.$emit(`moveSuccess`)
         },
         dataMove(value1, value2, value3) {
-            if (this.welcomeName === value3) {
+            if (this.welcomeName == value3) {
                 this.currentCategory = value1
                 this.currentId = value2
             } else {
