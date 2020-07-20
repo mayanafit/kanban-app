@@ -6,7 +6,7 @@
       <register @toLoginPage="changeToLogin" @loginButton="changeToLogin" v-else-if="currentPage === `register`"></register>
       <homepage @registerButton="changeToRegister" v-else-if="currentPage === `homepage`"></homepage>
     </div>
-    <kanbanPage @moveSuccess="getTasks" :welcomeName="userName" @editSuccess="getTasks" @successDelete="getTasks" @successAdd="getTasks" :dataFiltered="categories" v-else-if="!beforeLogin"></kanbanPage>
+    <kanbanPage @moveSuccess="getTasks" :welcomeName="userName" :userId="userId" @editSuccess="getTasks" @successDelete="getTasks" @successAdd="getTasks" :dataFiltered="categories" v-else-if="!beforeLogin"></kanbanPage>
   </div>
 </template>
 
@@ -22,6 +22,7 @@ export default {
   data() {
     return {
       beforeLogin: true,
+      userId: ``,  
       currentPage: `homepage`,
       email: ``,
       password: ``,
@@ -91,7 +92,7 @@ export default {
     },
     showTasks() {
       this.tasks = []
-      this.categories = [
+      const categories = [
         {
           name: `Backlog`,
           data: []
@@ -119,7 +120,8 @@ export default {
       .then(response => {
         // console.log(response)
         this.tasks = this.formattedTasks(response.data.data)
-        this.userName = response.data.UserId
+        this.userName = response.data.UserName
+        this.userId = response.data.UserId
         for(let i = 0; i < this.tasks.length; i++) {
           for (let j = 0; j < this.categories.length; j++) {
             if (this.tasks[i].category === this.categories[j].name) {

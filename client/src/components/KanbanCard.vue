@@ -41,7 +41,8 @@ export default {
     },
     methods: {
         dataMove(value1, value2, value3) {
-            // console.log(this.valueMove, `ini value move`)
+            this.valueMove = value1
+            console.log(this.valueMove, `ini value move`)
             this.$emit(`dataMove`, value1, value2, value3)
         },
         successEdit() {
@@ -91,12 +92,9 @@ export default {
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        swal("Successfully delete task!", {
-                        icon: "success",
-                        });
                         return axios({
                             method: `DELETE`,
-                            url: `http://localhost:3000/tasks/${value1}`,
+                            url: `https://warm-falls-04827.herokuapp.com/tasks/${value1}`,
                             headers: {
                             access_token: localStorage.access_token
                             }
@@ -105,6 +103,9 @@ export default {
                 })
                 .then(response => {
                     console.log(response)
+                    swal("Successfully delete task!", {
+                        icon: "success",
+                    });
                     this.$emit(`successDelete`)
                 })
                 .catch(err => {

@@ -16,6 +16,7 @@
             <label class="form-check-label" for="togglePass">Show Password</label>
         </div>
             <button type="submit" class="btn btn-outline-dark">Sign in</button><br><br>
+            <!-- diluar form untuk google -->
             <p>or login through:</p>
             <GoogleLogin id="googleButton" :params="params" :onSuccess="onSuccess"><img src="google_logo.png" width="30px" alt=""></GoogleLogin>
             <br>

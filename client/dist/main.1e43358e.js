@@ -12180,7 +12180,8 @@ var _default = {
   computed: {},
   methods: {
     dataMove: function dataMove(value1, value2, value3) {
-      // console.log(this.valueMove, `ini value move`)
+      this.valueMove = value1;
+      console.log(this.valueMove, "ini value move");
       this.$emit("dataMove", value1, value2, value3);
     },
     successEdit: function successEdit() {
@@ -12232,12 +12233,9 @@ var _default = {
         dangerMode: true
       }).then(function (willDelete) {
         if (willDelete) {
-          swal("Successfully delete task!", {
-            icon: "success"
-          });
           return (0, _axios.default)({
             method: "DELETE",
-            url: "http://localhost:3000/tasks/".concat(value1),
+            url: "https://warm-falls-04827.herokuapp.com/tasks/".concat(value1),
             headers: {
               access_token: localStorage.access_token
             }
@@ -12245,6 +12243,9 @@ var _default = {
         }
       }).then(function (response) {
         console.log(response);
+        swal("Successfully delete task!", {
+          icon: "success"
+        });
 
         _this2.$emit("successDelete");
       }).catch(function (err) {
@@ -12606,7 +12607,7 @@ var _default = {
       showModal: true
     };
   },
-  props: ["dataFiltered", "welcomeName"],
+  props: ["dataFiltered", "welcomeName", "userId"],
   computed: {},
   methods: {
     moveSuccess: function moveSuccess(value) {
@@ -12614,7 +12615,7 @@ var _default = {
       this.$emit("moveSuccess");
     },
     dataMove: function dataMove(value1, value2, value3) {
-      if (this.welcomeName == value3) {
+      if (this.userId == value3) {
         this.currentCategory = value1;
         this.currentId = value2;
       } else {
@@ -12754,6 +12755,7 @@ var _default = {
   data: function data() {
     return {
       beforeLogin: true,
+      userId: "",
       currentPage: "homepage",
       email: "",
       password: "",
@@ -12846,7 +12848,8 @@ var _default = {
       }).then(function (response) {
         // console.log(response)
         _this.tasks = _this.formattedTasks(response.data.data);
-        _this.userName = response.data.UserId;
+        _this.userName = response.data.UserName;
+        _this.userId = response.data.UserId;
 
         for (var i = 0; i < _this.tasks.length; i++) {
           for (var j = 0; j < _this.categories.length; j++) {
@@ -12914,7 +12917,11 @@ exports.default = _default;
           )
         : !_vm.beforeLogin
         ? _c("kanbanPage", {
-            attrs: { welcomeName: _vm.userName, dataFiltered: _vm.categories },
+            attrs: {
+              welcomeName: _vm.userName,
+              userId: _vm.userId,
+              dataFiltered: _vm.categories
+            },
             on: {
               moveSuccess: _vm.getTasks,
               editSuccess: _vm.getTasks,
@@ -13002,7 +13009,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38415" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46833" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
