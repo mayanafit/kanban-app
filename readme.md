@@ -1,6 +1,24 @@
-# KANBAN Server
+# KANBAN
 
 KANBAN is here to list all your task with more agile. We use RESTful API with JSON formatted responses.
+
+stack server:
+1. Bcrypt
+2. JWT
+3. Express
+4. PostgreSQL
+5. Sequelize
+
+stack client: 
+1. Vue.js
+2. Bootstrap
+
+add-ons:
+1. Google o-auth
+
+you can check out the demo here https://kanban-4d7b5.web.app/
+
+below is KANBAN server formatted responses:
 
 ## Global Response
 
